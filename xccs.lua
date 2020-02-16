@@ -1,7 +1,9 @@
 #!/usr/bin/env lua
-local lpeg = require(fengari and 'lulpeg' or 'lpeg')
-
-if not fengari then
+local lpeg
+if fengari then
+  lpeg = dofile('lulpeg.lua')
+else
+  lpeg = require('lpeg')
   local _inspect = require "inspect"
   function inspect (e) print(_inspect(e)) end
 end
