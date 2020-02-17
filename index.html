@@ -1,10 +1,95 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test</title>
+    <title>XCCS</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.51.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.51.0/theme/gruvbox-dark.min.css">
+    <style type="text/css">
+      h1 {
+          margin-left: 0.7em;
+          font-weight: normal;
+          font-style: italic;
+      }
+      body {
+          font-family: "Fira Sans", sans-serif;
+          background-color: black;
+          color: #ddd;
+      }
+      textarea {
+          width: 800px;
+          height: 450px;
+          font-size: 1.5em;
+      }
+      #buttons {
+          padding: 0.3em;
+          padding-left: 2em;
+          padding-bottom: 0.5em;
+          background-color: #555;
+      }
+      button:hover {
+          background-color: #e7e7e7;
+      }
+      button {
+          font-weight: bold;
+          /* padding: 0.2em 0.5em 0.2em 0.5em; */
+          font-family: "Fira Sans", sans-serif;
+          /* font-weight: bold; */
+          color: #444;
+          font-size: 0.9em;
+          padding: 0.2em 0.9em;
+          margin-right: 0.2em;
+          background-color: #aaa;
+          border-radius: 1em;
+          border-width: 0px;
+      }
+      button.active {
+          background-color: #cfcfcf;
+      }
+      .CodeMirror {
+          font-family: "Fira Mono", mono;
+          font-size: 1.2em;
+          background-color: #f7f7f7;
+          height: 500px;
+      }
+      .CodeMirror-gutters {
+          border-right: 1px solid #ddd;
+          background-color: #efefef;
+      }
+      .small {
+          font-style: normal;
+          font-size: 0.6em;
+          color: #555;
+      }
+      #cwbframe {
+          width: 100%;
+          border-width: 0;
+          height: 500px;
+          display: none;
+          background-color: #ccc;
+      }
+    </style>
   </head>
   <body>
-    <h1>Test</h1>
+    <h1>XCCS <span class="small">Parameterised Calculus of Concurrent Systems (CWB-NC)</span></h1>
+    <div id="buttons">
+      <button id="xccs" class="active">XCCS</button>
+      <button id="ccs">CCS</button>
+      <button id="compile">Compile</button>
+      <button id="example">Load Example</button>
+      <button id="cwbbtn">Load CWB-NC</button>
+    </div>
+    <div id="inwrap">
+      <textarea id="input" spellcheck="false"></textarea>
+    </div>
+    <div id="outwrap">
+      <textarea id="output" spellcheck="false"></textarea>
+    </div>
+    <iframe id="cwbframe" src=""></iframe>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.51.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.51.0/addon/mode/simple.min.js"></script>
+    <script src="cmsetup.js" type="text/javascript"></script>
     <script src="fengari-web.js" type="text/javascript"></script>
     <script src="script.lua" type="application/lua" async></script>
   </body>

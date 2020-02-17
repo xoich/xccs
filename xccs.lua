@@ -57,6 +57,7 @@ do
   local rngisep = ":" * space
   local rngsep = ";" * space
   local bindname = (lpeg.C"proc" + lpeg.C"set") * sp1 * space
+  local let = "let" * sp1 * space
   local V, Ct, Cc, Cp = lpeg.V, lpeg.Ct, lpeg.Cc, lpeg.Cp
   local err_pos
   local function update_err_pos (text, pos)
@@ -78,7 +79,7 @@ do
     xccs = Ct((V"ccsbind" + V"varbind")^0),
     ccsbind = ERR_POS * Cp() * bindname * V"ranges"^-1 * V"cname" * eq * Ct(V"exp")
       / packwithpos,
-    varbind = ERR_POS * (Cp() * Cc"var" * varname * eq * mexp)
+    varbind = ERR_POS * (Cp() * let * Cc"var" * varname * eq * mexp)
       / packwithpos,
     exp = V"term" * (oper * V"term")^0,
     term = (open / "(") * V"exp" * (close / ")") + V"oseq" + V"set" + V"rel" + V"cname",
