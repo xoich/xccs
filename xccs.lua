@@ -306,10 +306,6 @@ local function eval_xccs(tree, str)
   return true, table.concat(buff, "\n").."\n"
 end
 
-local function syntaxerr(str, pos)
-  error(e)
-end
-
 term_dispatcher = {
   pn = eval_pname,
   oseq = eval_oseq,
