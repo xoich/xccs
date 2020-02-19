@@ -15,6 +15,8 @@ local cwbframe = document:getElementById("cwbframe")
 local cwbbtn = document:getElementById("cwbbtn")
 local inwrap = document:getElementById("inwrap")
 local outwrap = document:getElementById("outwrap")
+local undobtn = document:getElementById("undo")
+local redobtn = document:getElementById("redo")
 
 local cwbloaded = false
 local visible = "xccs"
@@ -64,6 +66,17 @@ local function compile()
   cmoutput:setValue(ccstxt)
 end
 
+local function undo()
+  if visible == "xccs" then cminput:undo() end
+  if visible == "ccs" then cmoutput:undo() end
+end
+local function redo()
+  if visible == "xccs" then cminput:redo() end
+  if visible == "ccs" then cmoutput:redo() end
+end
+
+undobtn:addEventListener("click", undo)
+redobtn:addEventListener("click", redo)
 cwbbtn:addEventListener("click", gocwb)
 compilebtn:addEventListener("click", compile)
 xccsbtn:addEventListener("click", goxccs)
