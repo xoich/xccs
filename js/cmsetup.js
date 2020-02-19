@@ -36,6 +36,7 @@ cminput = CodeMirror.fromTextArea(document.getElementById("input"),
                                   {lineNumbers: true,
                                    mode: "xccs",
                                    theme: "gruvbox-dark"});
+
 let outwrap = document.getElementById("outwrap");
 outwrap.style.display = "block";
 cmoutput = CodeMirror.fromTextArea(document.getElementById("output"),

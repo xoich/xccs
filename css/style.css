@@ -13,6 +13,14 @@ textarea {
     height: 450px;
     font-size: 1.5em;
 }
+#compile {
+    /* margin-right: 1em; */
+}
+.separator {
+    color: #333;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+}
 #buttons {
     padding: 0.3em;
     padding-left: 2em;
@@ -32,12 +40,13 @@ button {
     font-size: 0.9em;
     padding: 0.2em 0.9em;
     margin-right: 0.2em;
+    margin-left: 0.2em;
     background-color: #aaa;
     border-radius: 1em;
     border-width: 0px;
 }
 button.active {
-    background-color: #cfcfcf;
+    background-color: #dfdfdf;
 }
 .CodeMirror {
     font-family: "Fira Mono", mono;
