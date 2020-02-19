@@ -3,7 +3,7 @@ local xccs = dofile("xccs.lua")
 local cminput = js.global.cminput
 local cmoutput = js.global.cmoutput
 
-cminput:setValue "proc <i:1,3> a = b(i + 3) | 'c // comment"
+-- cminput:setValue "proc <i:1,3> a = b(i + 3) | 'c // comment"
 
 local js = require "js"
 local document = js.global.document
@@ -15,7 +15,6 @@ local cwbframe = document:getElementById("cwbframe")
 local cwbbtn = document:getElementById("cwbbtn")
 local inwrap = document:getElementById("inwrap")
 local outwrap = document:getElementById("outwrap")
-outwrap.style.display = "none"
 
 local cwbloaded = false
 local visible = "xccs"

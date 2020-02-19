@@ -13,10 +13,10 @@ CodeMirror.defineSimpleMode("xccs", {
     ],
     norm: [
         {regex: /(?:proc|set)\b/, token: "keyword"},
-        {regex: /[+|\.]/, token: "operator"},
+        {regex: /\/\/.*/, token: "comment"},
+        {regex: /[+|\.\\\/]/, token: "operator"},
         {regex: /let\b/, token: "keyword", next: "varbind"},
         {regex: /<[^>]*?>/, token: "string"},
-        {regex: /\/\/.*/, token: "comment"},
         {regex: /nil/, token: "atom"},
         {regex: /([a-zA-Z][\w_]*)(\s*\()/, token: ["variable-2", "null"], push: "params"},
         {regex: /('[a-zA-Z][\w_]*)(\s*\()/, token: ["variable-3", "null"], push: "params"},
@@ -36,7 +36,11 @@ cminput = CodeMirror.fromTextArea(document.getElementById("input"),
                                   {lineNumbers: true,
                                    mode: "xccs",
                                    theme: "gruvbox-dark"});
+let outwrap = document.getElementById("outwrap");
+outwrap.style.display = "block";
 cmoutput = CodeMirror.fromTextArea(document.getElementById("output"),
                                    {lineNumbers: true,
                                     mode: null,
                                     theme: "gruvbox-dark"});
+
+outwrap.style.display = "none";

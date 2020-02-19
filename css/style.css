@@ -16,13 +16,14 @@ textarea {
 #buttons {
     padding: 0.3em;
     padding-left: 2em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.2em;
     background-color: #555;
 }
 button:hover {
     background-color: #e7e7e7;
 }
 button {
+    margin-bottom: 4px;
     font-weight: bold;
     /* padding: 0.2em 0.5em 0.2em 0.5em; */
     font-family: "Fira Sans", sans-serif;
@@ -62,4 +63,17 @@ button.active {
 }
 #X {
     font-weight: bold;
+}
+div.CodeMirror-selected{
+    background:#605041 !important;
+}
+#copyright {
+    margin-top: 0.2em;
+    color: #7c6f64;
+}
+a {
+    color: #282828;
+}
+#outwrap {
+    display: none;
 }
