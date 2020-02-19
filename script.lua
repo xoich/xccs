@@ -180,7 +180,7 @@ proc A = {onlyonce, <i:1,3> a(i), b(i), <j:4,6> c(j)}
 proc RB = B[only/once, <i:1,3> a(i)/b(i)]
 
 // End of the Tutorial. 
-// For an example of XCCS use click the button PIPE Example.
+// For an example of XCCS use, click the button PIPE Example.
 ]]
 }
 
