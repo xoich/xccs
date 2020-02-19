@@ -196,8 +196,8 @@ end
 
 local function tutorialnext()
   tutorialindex = tutorialindex + 1
-  cminput:setValue(tutorial[tutorialindex])
   goxccs()
+  cminput:setValue(tutorial[tutorialindex])
   if tutorialindex == #tutorial then
     tutorialbtn.textContent = "End - Restart Tutorial"
     tutorialindex = 0
@@ -232,4 +232,4 @@ set Internals = {<s:1,ns;i:0,nc> d(i,s)}
 proc  LB =  [| <i:0,nc+1> LB(C,i)] \ Internals
 ]=]
 
-examplebtn:addEventListener("click", function() cminput:setValue(pipeexample) goxccs() end)
+examplebtn:addEventListener("click", function() goxccs() cminput:setValue(pipeexample) end)
