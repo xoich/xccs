@@ -130,7 +130,7 @@ proc A = action(hello) // action_hello
 // The range syntax is <itname:start,end>, end is inclusive.
 // Arithmetic is again possible inside ranges:
 let n = 2
-proc <i:1,n+1> A(i) = a(i) . A((i+1)%n + 1)
+proc <i:1,n+1> A(i) = a(i) . A((i+1)%(n+1) + 1)
 
 // This is equivalent to the loop:
 // for i in [1,n+1]:
